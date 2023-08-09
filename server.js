@@ -3,10 +3,10 @@ const g_http    = require( "http"        );
 const g_express = require( "express"     );
 const g_multer  = require( "multer"      );
 const g_fs      = require( "fs"          );
-const g_cos     = require( "ibm-cos-sdk" );
+//const g_cos     = require( "ibm-cos-sdk" );
 
 
-const g_cos_bucket = process.env.COSBUCKET;
+/*const g_cos_bucket = process.env.COSBUCKET;
 const g_cos_config = { 
     endpoint          : process.env.COSENDPOINT,
     apiKeyId          : process.env.COSAPIKEY,
@@ -14,7 +14,7 @@ const g_cos_config = {
     serviceInstanceId : process.env.COSSERVICEINSTANCEID,
     signatureVersion  : 'iam' 
 };
-var g_cos_client = new g_cos.S3( g_cos_config );
+var g_cos_client = new g_cos.S3( g_cos_config );*/
 
 const g_wa_integration_id      = process.env.WAINTEGRATIONID;
 const g_wa_region              = process.env.WAREGION;
@@ -70,7 +70,7 @@ g_app.post( "/upload", g_upload.single( 'uploaded_file' ), function( request, re
     var file_name = request.file.filename;
     var file_path = request.file.path;
     
-    var params = { Bucket : g_cos_bucket, 
+    /*var params = { Bucket : g_cos_bucket, 
                    Key    : file_name, 
                    Body   : g_fs.createReadStream( file_path ) };
     
@@ -87,7 +87,7 @@ g_app.post( "/upload", g_upload.single( 'uploaded_file' ), function( request, re
     {
         response.status( 500 ).end( JSON.stringify( { "error_str" : err.message }, null, 3 ) );
         
-    } );
+    } );*/
     
 } );
 
