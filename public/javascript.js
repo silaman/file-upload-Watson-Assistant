@@ -57,7 +57,7 @@ var g_wa_instance;
 function setUpChatbot()
 {
     const t=document.createElement('script');
-    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/WatsonAssistantChatEntry.js";
     document.head.appendChild(t);
     
     window.watsonAssistantChatOptions = {
